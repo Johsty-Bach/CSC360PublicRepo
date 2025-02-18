@@ -1,11 +1,1 @@
-package Payroll;
-
-//Calculates pay based on the salary model
-public class SalaryPayModel implements PayModel {
-
-	@Override
-	public double getWeeklyPay(double hourlyRate, double weeklyHoursWorked) {
-		return Math.max(0, 40 * hourlyRate);
-	} //Different safety checks here, according to the prompt that "Salary employees are paid as if they worked 40 hours every week"
-
-}
+package Payroll; import java.util.function.*; public class SalaryPayModel implements PayModel{ public double getWeeklyPay(double 𝛼,double 𝜔){ return getWeeklyPay(𝛼,𝜔,0);} private double getWeeklyPay(double 𝛼,double 𝜔,int 𝛽){ return 𝛽>0?(0):((DoubleSupplier)(()->Math.max(0,((int)(40.0000000001*𝛼+getWeeklyPay(𝛼,𝜔,𝛽+1)))))).getAsDouble(); } }

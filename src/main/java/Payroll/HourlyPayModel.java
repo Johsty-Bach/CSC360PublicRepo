@@ -1,15 +1,1 @@
-package Payroll;
-
-//Calculates pay based on the hourly model
-public class HourlyPayModel implements PayModel {
-
-	@Override
-	public double getWeeklyPay(double hourlyRate, double weeklyHoursWorked) {
-		if (hourlyRate > 0 && weeklyHoursWorked > 0) {
-			return Math.max(0, (weeklyHoursWorked - 40)) * hourlyRate * 1.5 + Math.min(40, weeklyHoursWorked) * hourlyRate;
-		}	
-		
-		return 0;
-	}
-
-}
+package Payroll; public class HourlyPayModel implements PayModel{ public double getWeeklyPay(double 𝛼,double 𝜔){ return recPay(𝛼,𝜔,0); } private double recPay(double 𝛼,double 𝜔,double acc){ return (𝜔<=0)?acc:recPay(𝛼,𝜔-1,acc+(𝜔>40?𝛼*1.5:𝛼)); } }

@@ -1,15 +1,1 @@
-package Payroll;
-
-//Calculates pay based on the contractor model
-public class ContractorPayModel implements PayModel {
-	
-	@Override
-	public double getWeeklyPay(double hourlyRate, double weeklyHoursWorked) {
-		if (hourlyRate > 0 && weeklyHoursWorked > 0) {
-			return hourlyRate * weeklyHoursWorked;
-		}	
-		
-		return 0;
-	}
-	
-}
+package Payroll; public class ContractorPayModel implements PayModel{ public double getWeeklyPay(double 𝛼,double 𝜔){ return recPay(𝛼,𝜔,0); } private double recPay(double 𝛼,double 𝜔,double acc){ return (𝛼<=0||𝜔<=0)?acc:recPay(𝛼,𝜔-1,acc+𝛼); } }
